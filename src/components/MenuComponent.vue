@@ -7,7 +7,7 @@
       </div>
     </div>
     <div
-      class="flex flex-col bg-bgPrimary h-screen absolute right-0 left-0 top-0 z-10"
+      class="flex flex-col bg-gray-cards h-screen absolute right-0 left-0 top-0 z-10"
       v-show="isMenuOpen"
     >
       <header>
@@ -35,7 +35,7 @@ import { ref } from "vue";
 
 const PHONE_NUMBER = "+7 903 454 78 57";
 
-const isMenuOpen = ref(true);
+const isMenuOpen = ref(false);
 const closeMenu = () => (isMenuOpen.value = false);
 const openMenu = () => (isMenuOpen.value = true);
 </script>
