@@ -1,19 +1,40 @@
 <template>
   <div>
     <div class="p-4 z-0" v-show="!isMenuOpen">
-      <div class="p-4 bg-white flex justify-between shadow rounded-xl">
-        <img src="../assets/logo-ained.png" alt="logo-ained" />
-        <button @click="openMenu">toggle</button>
+      <div
+        class="p-4 bg-white flex justify-between shadow rounded-xl lg:gap-4 lg:items-center"
+      >
+        <div class="hidden lg:flex gap-4">
+          <img src="../assets/svg.png" alt="logo" />
+          <MenuLinks />
+        </div>
+        <img
+          src="../assets/ained-logo.png"
+          alt="logo-ained"
+          class="lg:hidden"
+        />
+        <button
+          class="hidden lg:block bg-primary h-11 rounded-md text-white self-end pl-6 pr-6"
+        >
+          {{ PHONE_NUMBER }}
+        </button>
+        <button @click="openMenu" class="lg:hidden">
+          <img src="../assets/menu.png" alt="toggle" />
+        </button>
       </div>
     </div>
+
+    <!-- mobile layout -->
     <div
-      class="flex flex-col bg-gray-cards h-screen absolute right-0 left-0 top-0 z-10"
+      class="flex flex-col bg-gray-cards h-screen absolute right-0 left-0 top-0 z-10 lg:hidden"
       v-show="isMenuOpen"
     >
-      <header>
+      <header class="lg:hidden">
         <div class="flex justify-between items-center content-center p-4">
           <img src="../assets/svg.png" alt="logo" />
-          <button @click="closeMenu">X</button>
+          <button @click="closeMenu">
+            <img src="../assets/close.png" alt="close" />
+          </button>
         </div>
         <hr />
       </header>
